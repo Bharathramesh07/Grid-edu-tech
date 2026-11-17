@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Grid Edutech | Learn Smart. Score Higher. Grow Confident.</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        gridBlack: '#000000',
+                        gridGray900: '#0A0A0A',
+                        gridGray800: '#171717',
+                        gridGray700: '#262626',
+                        gridGray600: '#404040',
+                        gridGray400: '#A3A3A3',
+                        gridGray200: '#E5E5E5',
+                        gridWhite: '#FFFFFF',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #000000; color: #FFFFFF; }
+        .glass-card { background: rgba(23, 23, 23, 0.75); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.12); }
+        .glass-card:hover { border-color: rgba(255, 255, 255, 0.3); }
+        .glow-button { transition: all 0.3s ease; }
+        .glow-button:hover { box-shadow: 0 0 25px rgba(255, 255, 255, 0.2); transform: translateY(-1px); }
+        /* Smooth Fade In Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in { animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    </style>
+</head>
+<body class="bg-gridBlack text-gridWhite min-h-screen flex flex-col selection:bg-white selection:text-black">
+
+    <!-- FLOATING WHATSAPP CHAT BUTTON -->
+    <a href="https://wa.me/919150077037?text=Hello%20The%20Grid%20Edutech,%20I%20would%20like%20to%20know%20more%20about%20classes." target="_blank" class="fixed bottom-6 right-6 z-50 bg-white text-black p-4 rounded-full shadow-2xl hover:bg-gray-200 transition-all transform hover:scale-110 flex items-center justify-center text-2xl font-bold" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- TOP BAR NOTIFICATION -->
+    <div class="bg-white text-black text-xs sm:text-sm py-2 px-4 text-center font-bold tracking-wide shadow-md flex items-center justify-center space-x-2">
+        <span class="bg-black text-white py-0.5 px-2 rounded text-[10px] uppercase tracking-widest">Free Demo</span>
+        <span>Tamil Nadu State Board | Classes 6 to 10 | Mon-Sat Batches</span>
+        <a href="#enroll" class="underline hover:opacity-75">Enrol Now →</a>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-gridBlack/90 backdrop-blur-md border-b border-gridGray800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-black font-black text-xl shadow-lg group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-cube text-black"></i>
+                </div>
+                <div>
+                    <span class="text-xl sm:text-2xl font-black tracking-wider text-white">THE GRID</span>
+                    <span class="block text-[10px] tracking-widest text-gridGray400 font-semibold uppercase">EDUTECH</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-gridGray400">
+                <a href="#home" class="hover:text-white transition-colors">Home</a>
+                <a href="#about" class="hover:text-white transition-colors">About Us</a>
+                <a href="#fees" class="hover:text-white transition-colors">Fee Structure</a>
+                <a href="#resources" class="hover:text-white transition-colors">Resources & PDFs</a>
+                <a href="#quiz" class="hover:text-white transition-colors">Practice Quiz</a>
+                <a href="#student-panel" class="hover:text-white transition-colors font-semibold text-white">Student Panel</a>
+                <a href="#admin-panel" class="hover:text-white transition-colors font-semibold text-gridGray200">Admin Panel</a>
+                <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+            </nav>
+
+            <!-- CTA Actions -->
+            <div class="hidden sm:flex items-center space-x-3">
+                <a href="#admin-panel" class="border border-gridGray700 hover:border-white text-xs font-bold px-4 py-2.5 rounded-xl transition-all">
+                    <i class="fa-solid fa-lock mr-1.5"></i> Admin
+                </a>
+                <a href="#enroll" class="bg-white text-black font-extrabold px-5 py-2.5 rounded-xl shadow-lg glow-button text-sm">
+                    Enroll Now
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-white text-2xl focus:outline-none" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-gridGray900 border-b border-gridGray800 px-6 py-4 space-y-3">
+            <a href="#home" class="block text-gray-300 hover:text-white py-1 font-medium mobile-link">Home</a>
+            <a href="#about" class="block text-gray-300 hover:text-white py-1 font-medium mobile-link">About Us</a>
+            <a href="#fees" class="block text-gray-300 hover:text-white py-1 font-medium mobile-link">Fee Structure</a>
+            <a href="#resources" class="block text-gray-300 hover:text-white py-1 font-medium mobile-link">Resources & PDFs</a>
+            <a href="#quiz" class="block text-gray-300 hover:text-white py-1 font-medium mobile-link">Practice Quiz</a>
+            <a href="#student-panel" class="block text-white font-bold py-1 mobile-link">Student Panel / Dashboard</a>
+            <a href="#admin-panel" class="block text-gridGray400 font-bold py-1 mobile-link">Admin Panel</a>
+            <a href="#faq" class="block text-gray-300 hover:text-white py-1 font-medium mobile-link">FAQ</a>
+            <div class="pt-2">
+                <a href="#enroll" class="block text-center bg-white text-black font-bold py-2.5 rounded-xl mobile-link">Enroll Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="flex-grow">
+
+        <!-- 1. HERO SECTION -->
+        <section id="home" class="relative overflow-hidden pt-16 pb-24 lg:pt-24 lg:pb-32 border-b border-gridGray800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <!-- Left Text Column -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center space-x-2 bg-gridGray800 border border-gridGray700 py-1.5 px-4 rounded-full text-white text-xs sm:text-sm font-semibold tracking-wide">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>Tamil Nadu State Board | Classes 6 to 10</span>
+                        </div>
+                        
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                            Learn Smart. <br>
+                            Score Higher. <br>
+                            <span class="underline decoration-white decoration-4 underline-offset-8">Grow Confident.</span>
+                        </h1>
+
+                        <p class="text-lg sm:text-xl text-gridGray400 max-w-2xl mx-auto lg:mx-0 font-normal">
+                            Concept-based, interactive online coaching for TN State Board students. Master Mathematics, Science, and a Language for just <span class="text-white font-bold">₹2,997/month</span>.
+                        </p>
+
+                        <!-- Highlights Pills -->
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-3 pt-2 text-sm text-gridGray300">
+                            <span class="glass-card px-3.5 py-2 rounded-xl flex items-center space-x-2 text-xs font-semibold">
+                                <i class="fa-solid fa-check text-white"></i><span>B.Ed Qualified Teachers</span>
+                            </span>
+                            <span class="glass-card px-3.5 py-2 rounded-xl flex items-center space-x-2 text-xs font-semibold">
+                                <i class="fa-solid fa-check text-white"></i><span>Tamil & English Medium</span>
+                            </span>
+                            <span class="glass-card px-3.5 py-2 rounded-xl flex items-center space-x-2 text-xs font-semibold">
+                                <i class="fa-solid fa-check text-white"></i><span>Weekly Tests & Dashboard</span>
+                            </span>
+                        </div>
+
+                        <!-- CTA Actions -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                            <a href="#enroll" class="w-full sm:w-auto bg-white text-black font-extrabold px-8 py-4 rounded-xl shadow-xl glow-button text-center transition-all">
+                                <i class="fa-solid fa-rocket mr-2"></i> Enroll Now - ₹2,997/mo
+                            </a>
+                            <a href="#student-panel" class="w-full sm:w-auto glass-card text-white hover:bg-gridGray800 font-semibold px-6 py-4 rounded-xl text-center transition-all">
+                                Student Panel Login →
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Card Column (Quick Info / Schedule) -->
+                    <div class="lg:col-span-5">
+                        <div class="glass-card rounded-3xl p-6 sm:p-8 relative overflow-hidden shadow-2xl">
+                            <div class="flex items-center justify-between mb-6">
+                                <span class="bg-white text-black text-xs font-extrabold px-3 py-1 rounded-md uppercase tracking-wider">Batch Schedule</span>
+                                <span class="text-xs text-gridGray400">Mon to Sat (Sun Holiday)</span>
+                            </div>
+
+                            <div class="space-y-4">
+                                <div class="bg-gridBlack p-4 rounded-2xl border border-gridGray800">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <h3 class="font-bold text-white text-base">Classes 6, 7 & 8</h3>
+                                        <span class="text-white font-bold text-sm">7:00 PM – 8:00 PM</span>
+                                    </div>
+                                    <p class="text-xs text-gridGray400">Mathematics & Science + Language</p>
+                                </div>
+
+                                <div class="bg-gridBlack p-4 rounded-2xl border border-gridGray800">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <h3 class="font-bold text-white text-base">Classes 9 & 10</h3>
+                                        <span class="text-white font-bold text-sm">8:00 PM – 9:00 PM</span>
+                                    </div>
+                                    <p class="text-xs text-gridGray400">Advanced Board Prep & Weekly Tests</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 pt-6 border-t border-gridGray800 flex items-center justify-between">
+                                <div>
+                                    <span class="block text-xs text-gridGray400">All 3 Subjects Package</span>
+                                    <span class="text-2xl font-black text-white">₹2,997 <span class="text-xs text-gridGray400 font-normal">/ month</span></span>
+                                </div>
+                                <a href="#enroll" class="bg-white text-black font-bold text-sm px-4 py-2.5 rounded-xl transition-all hover:bg-gray-200">
+                                    Book Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT US & PROGRAM HIGHLIGHTS -->
+        <section id="about" class="py-20 bg-gridGray900 border-b border-gridGray800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-gridGray400 mb-2">About The Grid Edutech</h2>
+                    <h3 class="text-3xl sm:text-4xl font-black tracking-tight">More Than Ordinary Tuition</h3>
+                    <p class="text-gridGray400 mt-3 text-base sm:text-lg">
+                        We provide affordable, high-quality, and structured online academic coaching for Tamil Nadu State Board students from Classes 6 to 10.
+                    </p>
+                </div>
+
+                <!-- Highlights Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="glass-card p-6 rounded-2xl transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-white text-black flex items-center justify-center text-xl font-bold mb-4">
+                            <i class="fa-solid fa-chalkboard-user"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">B.Ed Qualified Teachers</h4>
+                        <p class="text-gridGray400 text-sm leading-relaxed">
+                            Experienced Tamil Nadu State Board school teachers delivering concepts clearly in Tamil & English.
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-white text-black flex items-center justify-center text-xl font-bold mb-4">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Student Performance Dashboard</h4>
+                        <p class="text-gridGray400 text-sm leading-relaxed">
+                            Parents can track monthly test scores, attendance percentage, and study plans via secure login.
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-white text-black flex items-center justify-center text-xl font-bold mb-4">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Weekly Leaderboard & Quizzes</h4>
+                        <p class="text-gridGray400 text-sm leading-relaxed">
+                            Engaging weekly math problems, science challenges, and gamified practice quizzes to keep students motivated.
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-white text-black flex items-center justify-center text-xl font-bold mb-4">
+                            <i class="fa-solid fa-file-shield"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Weekly Examinations</h4>
+                        <p class="text-gridGray400 text-sm leading-relaxed">
+                            Regular chapter tests based on school exam patterns with detailed feedback and answer discussion.
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-white text-black flex items-center justify-center text-xl font-bold mb-4">
+                            <i class="fa-solid fa-comments"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Monthly Parent Interactions</h4>
+                        <p class="text-gridGray400 text-sm leading-relaxed">
+                            Regular communication on student progress, attendance updates, and structured revision timetables before exams.
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-2xl transition-all group">
+                        <div class="w-12 h-12 rounded-xl bg-white text-black flex items-center justify-center text-xl font-bold mb-4">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h4 class="text-lg font-bold text-white mb-2">Concept-Based Learning</h4>
+                        <p class="text-gridGray400 text-sm leading-relaxed">
+                            Interactive sessions emphasizing real-life applications rather than rote memorization.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. TRANSPARENT FEE STRUCTURE CARD -->
+        <section id="fees" class="py-20 border-b border-gridGray800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-gridGray400 mb-2">Simple & Transparent Fees</h2>
+                    <h3 class="text-3xl sm:text-4xl font-black tracking-tight">Affordable Excellence for Every Family</h3>
+                    <p class="text-gridGray400 mt-3 text-base sm:text-lg">
+                        Mathematics and Science must be taken together. Choose any one language. Minimum three subjects per student.
+                    </p>
+                </div>
+
+                <!-- Fee Breakdown Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                    <div class="glass-card p-8 rounded-3xl flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs uppercase tracking-wider text-gridGray400 font-bold">Compulsory Subject</span>
+                            <h4 class="text-2xl font-black text-white mt-2 mb-1">Mathematics</h4>
+                            <p class="text-gridGray400 text-sm mb-6">Complete Samacheer Kalvi syllabus, formula sheets & problem solving.</p>
+                        </div>
+                        <div class="pt-6 border-t border-gridGray800 flex items-center justify-between">
+                            <span class="text-gridGray400 text-sm">Monthly Fee</span>
+                            <span class="text-2xl font-bold text-white">₹999</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-3xl flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs uppercase tracking-wider text-gridGray400 font-bold">Compulsory Subject</span>
+                            <h4 class="text-2xl font-black text-white mt-2 mb-1">Science</h4>
+                            <p class="text-gridGray400 text-sm mb-6">Physics, Chemistry, Biology with diagram explanations & experiments.</p>
+                        </div>
+                        <div class="pt-6 border-t border-gridGray800 flex items-center justify-between">
+                            <span class="text-gridGray400 text-sm">Monthly Fee</span>
+                            <span class="text-2xl font-bold text-white">₹999</span>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-8 rounded-3xl flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs uppercase tracking-wider text-gridGray400 font-bold">Language of Choice</span>
+                            <h4 class="text-2xl font-black text-white mt-2 mb-1">English / Hindi / Tamil</h4>
+                            <p class="text-gridGray400 text-sm mb-6">Grammar exercises, reading comprehension, and prose practice.</p>
+                        </div>
+                        <div class="pt-6 border-t border-gridGray800 flex items-center justify-between">
+                            <span class="text-gridGray400 text-sm">Monthly Fee</span>
+                            <span class="text-2xl font-bold text-white">₹999</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Total Banner -->
+                <div class="bg-gridGray900 border border-white/20 rounded-3xl p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+                    <div class="text-center md:text-left">
+                        <span class="bg-white text-black text-xs font-black px-3 py-1 rounded uppercase tracking-widest">All 3 Subjects Bundle</span>
+                        <h3 class="text-3xl font-black text-white mt-3">Total Investment: ₹2,997 / month</h3>
+                        <p class="text-gridGray400 text-sm mt-1">That's about ₹100 a day for comprehensive coaching across all 3 subjects!</p>
+                    </div>
+                    <div>
+                        <a href="#enroll" class="bg-white text-black font-extrabold px-8 py-4 rounded-xl shadow-lg transition-all hover:bg-gray-200 inline-block">
+                            Enroll Now & Start Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. RESOURCES & PDFs (DYNAMICALLY SYNCED WITH ADMIN) -->
+        <section id="resources" class="py-20 bg-gridGray900 border-b border-gridGray800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-gridGray400 mb-2">Free Study Materials & Notes</h2>
+                    <h3 class="text-3xl sm:text-4xl font-black tracking-tight">Question Papers & Admin Uploads</h3>
+                    <p class="text-gridGray400 mt-3 text-base">
+                        Filter by standard or download PDFs uploaded live by the admin.
+                    </p>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap justify-center gap-2 mb-10">
+                    <button onclick="filterResources('all')" id="filter-all" class="resource-filter-btn px-5 py-2 rounded-xl text-sm font-bold bg-white text-black transition-all">All Standards</button>
+                    <button onclick="filterResources('6')" id="filter-6" class="resource-filter-btn px-5 py-2 rounded-xl text-sm font-medium bg-gridGray800 text-gridGray400 hover:text-white transition-all">Class 6</button>
+                    <button onclick="filterResources('7')" id="filter-7" class="resource-filter-btn px-5 py-2 rounded-xl text-sm font-medium bg-gridGray800 text-gridGray400 hover:text-white transition-all">Class 7</button>
+                    <button onclick="filterResources('8')" id="filter-8" class="resource-filter-btn px-5 py-2 rounded-xl text-sm font-medium bg-gridGray800 text-gridGray400 hover:text-white transition-all">Class 8</button>
+                    <button onclick="filterResources('9')" id="filter-9" class="resource-filter-btn px-5 py-2 rounded-xl text-sm font-medium bg-gridGray800 text-gridGray400 hover:text-white transition-all">Class 9</button>
+                    <button onclick="filterResources('10')" id="filter-10" class="resource-filter-btn px-5 py-2 rounded-xl text-sm font-medium bg-gridGray800 text-gridGray400 hover:text-white transition-all">Class 10</button>
+                </div>
+
+                <!-- Resource Cards Grid -->
+                <div id="resource-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Populated via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. PRACTICE QUIZ (ACTIVITIES) -->
+        <section id="quiz" class="py-20 border-b border-gridGray800">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-gridGray400 mb-2">Student Activities</h2>
+                    <h3 class="text-3xl font-black tracking-tight">Interactive Practice Quiz</h3>
+                    <p class="text-gridGray400 mt-2 text-sm">Test your knowledge with sample Samacheer Kalvi questions.</p>
+                </div>
+
+                <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-2xl">
+                    <!-- Quiz Selector State -->
+                    <div id="quiz-setup" class="space-y-6 text-center py-6">
+                        <h4 class="text-xl font-bold text-white">Select Your Standard to Begin Quiz</h4>
+                        <div class="flex justify-center gap-3 flex-wrap">
+                            <button onclick="startQuiz(6)" class="px-6 py-3 bg-gridGray800 hover:bg-white hover:text-black font-bold rounded-xl transition-all">Class 6</button>
+                            <button onclick="startQuiz(7)" class="px-6 py-3 bg-gridGray800 hover:bg-white hover:text-black font-bold rounded-xl transition-all">Class 7</button>
+                            <button onclick="startQuiz(8)" class="px-6 py-3 bg-gridGray800 hover:bg-white hover:text-black font-bold rounded-xl transition-all">Class 8</button>
+                            <button onclick="startQuiz(9)" class="px-6 py-3 bg-gridGray800 hover:bg-white hover:text-black font-bold rounded-xl transition-all">Class 9</button>
+                            <button onclick="startQuiz(10)" class="px-6 py-3 bg-gridGray800 hover:bg-white hover:text-black font-bold rounded-xl transition-all">Class 10</button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Question Container -->
+                    <div id="quiz-container" class="hidden space-y-6">
+                        <div class="flex justify-between items-center text-sm text-gridGray400 border-b border-gridGray800 pb-4">
+                            <span id="quiz-progress">Question 1 of 5</span>
+                            <span id="quiz-standard-badge" class="bg-white text-black px-3 py-1 rounded-full font-bold text-xs">Standard 10</span>
+                        </div>
+                        <div id="question-text" class="text-lg sm:text-xl font-bold text-white"></div>
+                        <div id="options-container" class="space-y-3"></div>
+                        <div id="quiz-feedback" class="hidden p-4 rounded-xl text-sm font-medium"></div>
+                        <div class="flex justify-end">
+                            <button id="next-question-btn" onclick="nextQuestion()" class="hidden bg-white hover:bg-gray-200 text-black font-bold px-6 py-2.5 rounded-xl transition-all">Next Question</button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Score Screen -->
+                    <div id="quiz-score-screen" class="hidden text-center py-8 space-y-6">
+                        <div class="w-20 h-20 bg-white text-black rounded-full flex items-center justify-center text-4xl mx-auto font-black">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <h4 class="text-2xl font-black text-white">Quiz Completed!</h4>
+                        <p id="final-score-text" class="text-lg text-gridGray300">You scored 4 out of 5 correct!</p>
+                        <p class="text-sm text-gridGray400">Great job! Regular practice with The Grid Edutech ensures top board exam scores.</p>
+                        <div>
+                            <button onclick="resetQuiz()" class="bg-white text-black font-bold px-6 py-3 rounded-xl hover:bg-gray-200 transition-all">Try Another Quiz</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. STUDENT PANEL / PARENT DASHBOARD -->
+        <section id="student-panel" class="py-20 bg-gridGray900 border-b border-gridGray800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-gridGray400 mb-2">Secure Student & Parent Portal</h2>
+                    <h3 class="text-3xl sm:text-4xl font-black tracking-tight">Student Panel (Viewing Access Only)</h3>
+                    <p class="text-gridGray400 mt-3 text-base">
+                        Login with your parent phone number and student PIN to view monthly marks, attendance, study plans, and admin announcements.
+                    </p>
+                </div>
+
+                <div class="max-w-4xl mx-auto glass-card rounded-3xl p-6 sm:p-10 shadow-2xl">
+                    <!-- Login Box -->
+                    <div id="student-login-box" class="space-y-6 max-w-md mx-auto py-4">
+                        <h4 class="text-xl font-bold text-center text-white">Student Panel Login</h4>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gridGray400 mb-1 font-semibold">Parent Phone Number</label>
+                            <input type="tel" id="student-login-phone" placeholder="9150077037" class="w-full bg-gridBlack border border-gridGray800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white">
+                        </div>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gridGray400 mb-1 font-semibold">Student PIN / ID</label>
+                            <input type="text" id="student-login-pin" placeholder="GRID101" class="w-full bg-gridBlack border border-gridGray800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white">
+                        </div>
+                        <button onclick="loginStudent()" class="w-full bg-white text-black font-bold py-3.5 rounded-xl shadow-lg hover:bg-gray-200 transition-all">
+                            Access Student Panel
+                        </button>
+                        <p class="text-xs text-center text-gridGray400">Demo test credentials: Use any phone & PIN (e.g. Phone: 9150077037, PIN: 1234)</p>
+                    </div>
+
+                    <!-- Dashboard Content View (Hidden until login) -->
+                    <div id="student-dashboard-content" class="hidden space-y-8 animate-fade-in">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-gridGray800 pb-6 gap-4">
+                            <div>
+                                <span class="bg-white text-black text-xs font-bold px-3 py-1 rounded uppercase">Viewing Mode Active</span>
+                                <h4 class="text-2xl font-black text-white mt-2">Student: Rahul Sharma (Class 10)</h4>
+                                <p class="text-xs text-gridGray400">School: Govt Higher Sec School | Board: TN State Board</p>
+                            </div>
+                            <button onclick="logoutStudent()" class="text-sm bg-gridGray800 hover:bg-gridGray700 text-white px-4 py-2 rounded-xl transition-all">Logout</button>
+                        </div>
+
+                        <!-- Admin Announcements Banner (Dynamic) -->
+                        <div id="student-announcements-banner" class="bg-gridBlack p-5 rounded-2xl border border-white/20">
+                            <div class="flex items-center space-x-2 text-white font-bold mb-1">
+                                <i class="fa-solid fa-bullhorn"></i>
+                                <span>Latest Announcement from Admin</span>
+                            </div>
+                            <p id="student-announcement-text" class="text-sm text-gridGray300">No urgent announcements posted yet.</p>
+                        </div>
+
+                        <!-- Stats Overview -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="bg-gridBlack p-5 rounded-2xl border border-gridGray800">
+                                <span class="text-xs text-gridGray400 uppercase font-semibold">Monthly Attendance</span>
+                                <div class="text-3xl font-black text-white mt-2">96.5%</div>
+                                <span class="text-xs text-gridGray400">Present 26 of 27 working days</span>
+                            </div>
+                            <div class="bg-gridBlack p-5 rounded-2xl border border-gridGray800">
+                                <span class="text-xs text-gridGray400 uppercase font-semibold">Weekly Test Average</span>
+                                <div class="text-3xl font-black text-white mt-2">44 / 50</div>
+                                <span class="text-xs text-gridGray400">Top 10% in Standard 10</span>
+                            </div>
+                            <div class="bg-gridBlack p-5 rounded-2xl border border-gridGray800">
+                                <span class="text-xs text-gridGray400 uppercase font-semibold">Leaderboard Rank</span>
+                                <div class="text-3xl font-black text-white mt-2">#3</div>
+                                <span class="text-xs text-gridGray400">Out of 120 students in Class 10</span>
+                            </div>
+                        </div>
+
+                        <!-- Marks Table -->
+                        <div>
+                            <h5 class="text-lg font-bold text-white mb-4"><i class="fa-solid fa-chart-bar mr-2"></i> Monthly Subject Performance</h5>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left text-sm text-gridGray300">
+                                    <thead class="bg-gridBlack uppercase text-xs text-gridGray400">
+                                        <tr>
+                                            <th class="p-3">Subject</th>
+                                            <th class="p-3">Test 1</th>
+                                            <th class="p-3">Test 2</th>
+                                            <th class="p-3">Monthly Exam</th>
+                                            <th class="p-3">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="divide-y divide-gridGray800">
+                                        <tr>
+                                            <td class="p-3 font-semibold text-white">Mathematics</td>
+                                            <td class="p-3">45/50</td>
+                                            <td class="p-3">48/50</td>
+                                            <td class="p-3 font-bold text-white">94%</td>
+                                            <td class="p-3"><span class="bg-white text-black px-2 py-0.5 rounded text-xs font-bold">Excellent</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-3 font-semibold text-white">Science</td>
+                                            <td class="p-3">42/50</td>
+                                            <td class="p-3">46/50</td>
+                                            <td class="p-3 font-bold text-white">88%</td>
+                                            <td class="p-3"><span class="bg-white text-black px-2 py-0.5 rounded text-xs font-bold">Good</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="p-3 font-semibold text-white">English (Language)</td>
+                                            <td class="p-3">40/50</td>
+                                            <td class="p-3">44/50</td>
+                                            <td class="p-3 font-bold text-white">84%</td>
+                                            <td class="p-3"><span class="bg-white text-black px-2 py-0.5 rounded text-xs font-bold">Satisfactory</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Weekly Study Plan (Dynamic from Admin) -->
+                        <div class="bg-gridBlack p-6 rounded-2xl border border-gridGray800">
+                            <h5 class="text-base font-bold text-white mb-2"><i class="fa-solid fa-calendar-week mr-2"></i> Current Week Study Plan (Uploaded by Admin)</h5>
+                            <p id="student-study-plan-display" class="text-sm text-gridGray300 whitespace-pre-line">Loading study plan...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. ADMIN PANEL (PROTECTED UPLOAD CENTER) -->
+        <section id="admin-panel" class="py-20 border-b border-gridGray800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-gridGray400 mb-2">Restricted Area</h2>
+                    <h3 class="text-3xl sm:text-4xl font-black tracking-tight">Admin Upload Panel</h3>
+                    <p class="text-gridGray400 mt-3 text-base">
+                        Upload PDFs, photos, weekly study plans, and student information. Changes reflect instantly on the student portal and public resources.
+                    </p>
+                </div>
+
+                <div class="max-w-4xl mx-auto glass-card rounded-3xl p-6 sm:p-10 shadow-2xl">
+                    <!-- Admin Login Pin Check -->
+                    <div id="admin-login-box" class="space-y-6 max-w-md mx-auto py-4">
+                        <h4 class="text-xl font-bold text-center text-white">Enter Admin Password</h4>
+                        <div>
+                            <label class="block text-xs uppercase tracking-wider text-gridGray400 mb-1 font-semibold">Admin PIN</label>
+                            <input type="password" id="admin-pin-input" placeholder="Enter PIN (default: grid2026)" class="w-full bg-gridBlack border border-gridGray800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white">
+                        </div>
+                        <button onclick="loginAdmin()" class="w-full bg-white text-black font-bold py-3.5 rounded-xl shadow-lg hover:bg-gray-200 transition-all">
+                            Unlock Admin Panel
+                        </button>
+                        <p class="text-xs text-center text-gridGray400">Hint: Use PIN <code class="bg-gridBlack px-2 py-0.5 rounded text-white">grid2026</code></p>
+                    </div>
+
+                    <!-- Admin Dashboard Tabs (Hidden until login) -->
+                    <div id="admin-dashboard-content" class="hidden space-y-8 animate-fade-in">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-gridGray800 pb-6 gap-4">
+                            <div>
+                                <span class="bg-white text-black text-xs font-extrabold px-3 py-1 rounded uppercase">Admin Mode Active</span>
+                                <h4 class="text-2xl font-black text-white mt-2">Content & Resource Manager</h4>
+                            </div>
+                            <button onclick="logoutAdmin()" class="text-sm bg-gridGray800 hover:bg-gridGray700 text-white px-4 py-2 rounded-xl">Lock Admin</button>
+                        </div>
+
+                        <!-- Tabs Header -->
+                        <div class="flex border-b border-gridGray800 space-x-4 overflow-x-auto text-sm font-bold">
+                            <button onclick="switchAdminTab('pdf')" id="tab-btn-pdf" class="pb-3 border-b-2 border-white text-white whitespace-nowrap">Upload PDFs / Notes</button>
+                            <button onclick="switchAdminTab('announcement')" id="tab-btn-announcement" class="pb-3 border-b-2 border-transparent text-gridGray400 hover:text-white whitespace-nowrap">Post Announcements</button>
+                            <button onclick="switchAdminTab('studyplan')" id="tab-btn-studyplan" class="pb-3 border-b-2 border-transparent text-gridGray400 hover:text-white whitespace-nowrap">Update Study Plan</button>
+                            <button onclick="switchAdminTab('leads')" id="tab-btn-leads" class="pb-3 border-b-2 border-transparent text-gridGray400 hover:text-white whitespace-nowrap">View Enrollments (<span id="enrollment-count-badge">0</span>)</button>
+                        </div>
+
+                        <!-- Tab 1: Upload PDF / Material -->
+                        <div id="admin-tab-pdf" class="space-y-6">
+                            <h5 class="text-lg font-bold text-white">Upload New PDF or Study Material</h5>
+                            <form onsubmit="handleAdminUploadPDF(event)" class="space-y-4">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs uppercase tracking-wider text-gridGray400 mb-1 font-semibold">Document Title *</label>
+                                        <input type="text" id="up-title" required placeholder="e.g. Class 10 Maths Chapter 5 Notes" class="w-full bg-gridBlack border border-gridGray800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs uppercase tracking-wider text-gridGray400 mb-1 font-semibold">Standard *</label>
+                                        <select id="up-std" required class="w-full bg-gridBlack border border-gridGray800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white">
+                                            <option value="6">Class 6</option>
+                                            <option value="7">Class 7</option>
+                                            <option value="8">Class 8</option>
+                                            <option value="9">Class 9</option>
+                                            <option value="10" selected>Class 10</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-xs uppercase tracking-wider text-gridGray400 mb-1 font-semibold">Subject *</label>
+                                        <select id="up-subject" required class="w-full bg-gridBlack border border-gridGray800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white">
+                                            <option value="Mathematics">Mathematics</option>
+                                            <option value="Science">Science</option>
+                                            <option value="Language">Language (Tamil/English)</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs uppercase tracking-wider text-gridGray400 mb-1 font-semibold">Select PDF File or Mock Upload *</label>
+                                        <input type="file" id="up-file" accept=".pdf" required class="w-full bg-gridBlack border border-gridGray800 rounded-xl px-3 py-2 text-white text-xs file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-white file:text-black hover:file:bg-gray-200">
+                                    </div>
+                                </div>
+                                <button type="submit" class="bg-white text-black font-bold px-6 py-3 rounded-xl hover:bg-gray-200 transition-all text-sm">
+                                    <i class="fa-solid fa-cloud-arrow-up mr-2"></i> Upload PDF to Student & Resource Pool
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Tab 2: Post Announcements -->
+                        <div id="admin-tab-announcement" class="hidden space-y-6">
+                            <h5 class="text-lg font-bold text-white">Post Announcement for Student Panel</h5>
+                            <form onsubmit="handleAdminAnnouncement(event)" class="space-y-4">
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-gridGray400 mb-1 font-semibold">Announcement Text *</label>
+                                    <textarea id="admin-announcement-input" rows="3" required placeholder="e.g. Special science revision session scheduled this Saturday at 6 PM." class="w-full bg-gridBlack border border-gridGray800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white"></textarea>
+                                </div>
+                                <button type="submit" class="bg-white text-black font-bold px-6 py-3 rounded-xl hover:bg-gray-200 transition-all text-sm">
+                                    Publish Announcement Instantly
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Tab 3: Update Study Plan -->
+                        <div id="admin-tab-studyplan" class="hidden space-y-6">
+                            <h5 class="text-lg font-bold text-white">Update Weekly Study Plan</h5>
+                            <form onsubmit="handleAdminStudyPlan(event)" class="space-y-4">
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-gridGray400 mb-1 font-semibold">Study Plan Details *</label>
+                                    <textarea id="admin-studyplan-input" rows="4" required placeholder="Enter weekly plan for Maths, Science and Language..." class="w-full bg-gridBlack border border-gridGray800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white"></textarea>
+                                </div>
+                                <button type="submit" class="bg-white text-black font-bold px-6 py-3 rounded-xl hover:bg-gray-200 transition-all text-sm">
+                                    Update Study Plan
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Tab 4: View Enrollments -->
+                        <div id="admin-tab-leads" class="hidden space-y-6">
+                            <h5 class="text-lg font-bold text-white">Submitted Enrollment Leads</h5>
+                            <div id="admin-leads-list" class="space-y-3">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. ENROLL NOW FORM -->
+        <section id="enroll" class="py-20 border-b border-gridGray800">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-gridGray400 mb-2">Join The Grid</h2>
+                    <h3 class="text-3xl sm:text-4xl font-black tracking-tight">Enroll Now & Secure Your Seat</h3>
+                    <p class="text-gridGray400 mt-3 text-base">
+                        Fill out the details below. We save your submission instantly and provide an option to notify our admin via WhatsApp.
+                    </p>
+                </div>
+
+                <div class="glass-card rounded-3xl p-6 sm:p-10 shadow-2xl relative">
+                    <!-- Form State -->
+                    <form id="enrollment-form" onsubmit="handleEnrollmentSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gridGray400 mb-1 font-semibold">Student Full Name *</label>
+                                <input type="text" id="student-name" required placeholder="e.g. Priya Kumar" class="w-full bg-gridBlack border border-gridGray800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gridGray400 mb-1 font-semibold">Student Age *</label>
+                                <input type="number" id="student-age" required min="10" max="17" placeholder="e.g. 14" class="w-full bg-gridBlack border border-gridGray800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gridGray400 mb-1 font-semibold">Standard *</label>
+                                <select id="student-standard" required class="w-full bg-gridBlack border border-gridGray800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white">
+                                    <option value="" disabled selected>Select Standard</option>
+                                    <option value="6">Class 6</option>
+                                    <option value="7">Class 7</option>
+                                    <option value="8">Class 8</option>
+                                    <option value="9">Class 9</option>
+                                    <option value="10">Class 10</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gridGray400 mb-1 font-semibold">School Name *</label>
+                                <input type="text" id="student-school" required placeholder="e.g. Govt Girls Hr Sec School" class="w-full bg-gridBlack border border-gridGray800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gridGray400 mb-1 font-semibold">Board *</label>
+                                <select id="student-board" required class="w-full bg-gridBlack border border-gridGray800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white">
+                                    <option value="State Board" selected>State Board (Samacheer)</option>
+                                    <option value="CBSE">CBSE</option>
+                                    <option value="ICSE">ICSE</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gridGray400 mb-1 font-semibold">Parent Phone Number (10 digits) *</label>
+                                <input type="tel" id="parent-phone" required pattern="[0-9]{10}" placeholder="9150077037" class="w-full bg-gridBlack border border-gridGray800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white">
+                                <span class="text-[11px] text-gridGray400 mt-1 block">Used for Student Dashboard login and notifications.</span>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-wider text-gridGray400 mb-1 font-semibold">Address / City *</label>
+                                <input type="text" id="student-address" required placeholder="e.g. Salem, Tamil Nadu" class="w-full bg-gridBlack border border-gridGray800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-white">
+                            </div>
+                        </div>
+
+                        <!-- Honeypot for spam protection -->
+                        <div style="display:none;">
+                            <label>Leave empty if human</label>
+                            <input type="text" id="hp-field" name="hp-field">
+                        </div>
+
+                        <!-- Consent Checkbox -->
+                        <div class="flex items-start space-x-3 pt-2">
+                            <input type="checkbox" id="consent-check" required class="mt-1 w-4 h-4 rounded bg-gridBlack border-gridGray800 text-white focus:ring-0">
+                            <label for="consent-check" class="text-xs text-gridGray300 leading-relaxed">
+                                I consent to The Grid Edutech collecting student academic data, attendance, and test scores for educational progress tracking as per the Privacy Policy. *
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="pt-4">
+                            <button type="submit" class="w-full bg-white text-black font-extrabold py-4 rounded-xl shadow-xl hover:bg-gray-200 transition-all text-center">
+                                <i class="fa-solid fa-paper-plane mr-2"></i> Submit Enrollment & Connect WhatsApp
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Success Thank You State -->
+                    <div id="enrollment-success" class="hidden text-center py-12 space-y-6">
+                        <div class="w-20 h-20 bg-white text-black rounded-full flex items-center justify-center text-4xl mx-auto font-black">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <h4 class="text-3xl font-black text-white">Enrollment Successful!</h4>
+                        <p class="text-gridGray300 max-w-lg mx-auto text-sm sm:text-base">
+                            Thank you! Your registration data has been securely saved to our database record.
+                        </p>
+                        <div class="p-4 bg-gridBlack rounded-2xl border border-gridGray800 max-w-md mx-auto text-left text-xs space-y-1 text-gridGray400">
+                            <p><strong class="text-white">Student:</strong> <span id="res-name">-</span></p>
+                            <p><strong class="text-white">Standard:</strong> Class <span id="res-std">-</span></p>
+                            <p><strong class="text-white">Parent Phone:</strong> <span id="res-phone">-</span></p>
+                            <p><strong class="text-white">Status:</strong> Seat Reserved (Demo Class Active)</p>
+                        </div>
+                        <div class="pt-4 flex flex-col sm:flex-row justify-center gap-4">
+                            <a id="whatsapp-redirect-btn" href="#" target="_blank" class="bg-white text-black font-bold px-6 py-3 rounded-xl hover:bg-gray-200 transition-all flex items-center justify-center space-x-2">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                <span>Send Details to Admin via WhatsApp</span>
+                            </a>
+                            <button onclick="resetEnrollmentForm()" class="bg-gridGray800 hover:bg-gridGray700 text-white font-semibold px-6 py-3 rounded-xl transition-all">
+                                Enroll Another Student
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. FAQ SECTION -->
+        <section id="faq" class="py-20 bg-gridGray900 border-b border-gridGray800">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-gridGray400 mb-2">Got Questions?</h2>
+                    <h3 class="text-3xl sm:text-4xl font-black tracking-tight">Frequently Asked Questions</h3>
+                    <p class="text-gridGray400 mt-3 text-base">Everything you need to know about fees, timings, boards, and demo classes.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="glass-card rounded-2xl overflow-hidden border border-gridGray800">
+                        <button onclick="toggleFaq(this)" class="w-full text-left p-6 font-bold text-white flex justify-between items-center focus:outline-none">
+                            <span>How are online classes conducted?</span>
+                            <i class="fa-solid fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-gridGray400 text-sm leading-relaxed border-t border-gridGray800 pt-4">
+                            All classes are conducted online via interactive live streaming sessions. Students can interact with teachers in real-time and ask questions.
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl overflow-hidden border border-gridGray800">
+                        <button onclick="toggleFaq(this)" class="w-full text-left p-6 font-bold text-white flex justify-between items-center focus:outline-none">
+                            <span>What is the medium of teaching?</span>
+                            <i class="fa-solid fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-gridGray400 text-sm leading-relaxed border-t border-gridGray800 pt-4">
+                            Classes are taught in Tamil & English only to ensure students fully grasp complex scientific and mathematical concepts comfortably.
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl overflow-hidden border border-gridGray800">
+                        <button onclick="toggleFaq(this)" class="w-full text-left p-6 font-bold text-white flex justify-between items-center focus:outline-none">
+                            <span>What are the class timings?</span>
+                            <i class="fa-solid fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-gridGray400 text-sm leading-relaxed border-t border-gridGray800 pt-4">
+                            Classes run Monday to Saturday. Classes 6, 7 & 8 have sessions from 7:00 PM to 8:00 PM. Classes 9 & 10 have sessions from 8:00 PM to 9:00 PM.
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl overflow-hidden border border-gridGray800">
+                        <button onclick="toggleFaq(this)" class="w-full text-left p-6 font-bold text-white flex justify-between items-center focus:outline-none">
+                            <span>What is the exact fee structure?</span>
+                            <i class="fa-solid fa-chevron-down transition-transform"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-gridGray400 text-sm leading-relaxed border-t border-gridGray800 pt-4">
+                            Fee is ₹999 per subject per month. Mathematics and Science are compulsory, plus one language. The total bundle for all 3 subjects is ₹2,997/month.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. CONTACT US -->
+        <section id="contact" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-gridGray400 mb-2">Get In Touch</h2>
+                    <h3 class="text-3xl sm:text-4xl font-black tracking-tight">We're Here to Help Your Child Succeed</h3>
+                    <p class="text-gridGray400 mt-3 text-base">Reach out via phone, WhatsApp, email, or visit our coaching center location.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <div class="glass-card p-6 rounded-2xl flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-white text-black flex items-center justify-center text-xl flex-shrink-0 font-bold">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-white">Phone / WhatsApp</h4>
+                                <p class="text-gridGray400 text-sm mt-1">+91 91500 77037</p>
+                                <a href="tel:+919150077037" class="text-white text-xs font-bold hover:underline mt-2 inline-block">Click to Call →</a>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-2xl flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-white text-black flex items-center justify-center text-xl flex-shrink-0 font-bold">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-white">Email Address</h4>
+                                <p class="text-gridGray400 text-sm mt-1">thegrid258@gmail.com</p>
+                                <a href="mailto:thegrid258@gmail.com" class="text-white text-xs font-bold hover:underline mt-2 inline-block">Send Email →</a>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-2xl flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-white text-black flex items-center justify-center text-xl flex-shrink-0 font-bold">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-white">Coaching Center Location</h4>
+                                <p class="text-gridGray400 text-sm mt-1">Salem & Chennai, Tamil Nadu, India</p>
+                                <span class="text-gridGray400 text-xs mt-1 block">Online sessions accessible across all TN districts.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-3 rounded-3xl h-[380px] overflow-hidden">
+                        <iframe title="Google Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.8473849123!2d80.2012!3d13.0827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDA0JzU3LjciTiA4MsKwMTInMDQuMyJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0; border-radius: 1.2rem;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gridBlack border-t border-gridGray800 py-12 text-sm text-gridGray400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-white flex items-center justify-center text-black font-black text-sm">
+                    <i class="fa-solid fa-cube text-black"></i>
+                </div>
+                <span class="font-bold text-white">THE GRID EDUTECH</span>
+            </div>
+            <p class="text-center md:text-left text-xs text-gridGray400">
+                © 2026 The Grid Edutech. Tamil Nadu State Board Online Coaching (Classes 6 to 10). All rights reserved.
+            </p>
+            <div class="flex space-x-6 text-gridGray400">
+                <a href="#home" class="hover:text-white">Home</a>
+                <a href="#resources" class="hover:text-white">Resources</a>
+                <a href="#faq" class="hover:text-white">FAQ</a>
+                <a href="#admin-panel" class="hover:text-white">Admin</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Default State & Storage initialization
+        const defaultResources = [
+            { id: 1, title: "Class 10 Mathematics Annual Model Question Paper", standard: "10", subject: "Mathematics", type: "Model Question Paper", size: "1.4 MB" },
+            { id: 2, title: "Class 10 Science Important Formula & Diagram Sheet", standard: "10", subject: "Science", type: "Notes", size: "2.1 MB" },
+            { id: 3, title: "Class 9 State Board Quarterly Exam Question Paper", standard: "9", subject: "Mathematics", type: "Previous Year", size: "1.2 MB" },
+            { id: 4, title: "Class 8 Mathematics Chapter-wise Practice Worksheet", standard: "8", subject: "Mathematics", type: "Worksheet", size: "950 KB" },
+            { id: 5, title: "Class 6 Mathematics Formula Sheet & Fundamentals", standard: "6", subject: "Mathematics", type: "Formula Sheet", size: "800 KB" }
+        ];
+
+        if(!localStorage.getItem('grid_resources')) {
+            localStorage.setItem('grid_resources', JSON.stringify(defaultResources));
+        }
+
+        if(!localStorage.getItem('grid_announcement')) {
+            localStorage.setItem('grid_announcement', "Welcome to The Grid Edutech! Weekly examinations start this coming Saturday at 7 PM.");
+        }
+
+        if(!localStorage.getItem('grid_studyplan')) {
+            localStorage.setItem('grid_studyplan', "Maths: Coordinate Geometry - Ex 5.1 & 5.2 practice problems.\nScience: Plant Physiology chapter revision and diagram practice.\nLanguage: Grammar active/passive voice worksheets.");
+        }
+
+        // Render Resources function
+        function renderResources(filterStd) {
+            const resources = JSON.parse(localStorage.getItem('grid_resources') || '[]');
+            const grid = document.getElementById('resource-grid');
+            grid.innerHTML = '';
+            
+            const filtered = filterStd === 'all' ? resources : resources.filter(r => r.standard === filterStd);
+
+            if(filtered.length === 0) {
+                grid.innerHTML = `<div class="col-span-3 text-center py-10 text-gridGray400">No resources found for this standard yet. Admin can upload notes above.</div>`;
+                return;
+            }
+
+            filtered.forEach(res => {
+                const card = document.createElement('div');
+                card.className = "glass-card p-6 rounded-2xl flex flex-col justify-between transition-all animate-fade-in";
+                card.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="bg-white text-black text-xs font-bold px-3 py-1 rounded">Class ${res.standard} - ${res.subject}</span>
+                            <span class="text-xs text-gridGray400">${res.size || '1.2 MB'}</span>
+                        </div>
+                        <h4 class="font-bold text-white text-base mb-2">${res.title}</h4>
+                        <p class="text-xs text-gridGray400 mb-4">Type: ${res.type || 'PDF Document'} | Samacheer Kalvi Aligned</p>
+                    </div>
+                    <button onclick="downloadResource('${res.title}')" class="w-full bg-gridGray800 hover:bg-white hover:text-black font-bold text-sm py-2.5 rounded-xl transition-all flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-download"></i>
+                        <span>Download PDF</span>
+                    </button>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filterResources(std) {
+            document.querySelectorAll('.resource-filter-btn').forEach(btn => {
+                btn.className = "resource-filter-btn px-5 py-2 rounded-xl text-sm font-medium bg-gridGray800 text-gridGray400 hover:text-white transition-all";
+            });
+            document.getElementById(`filter-${std}`).className = "resource-filter-btn px-5 py-2 rounded-xl text-sm font-bold bg-white text-black transition-all";
+            renderResources(std);
+        }
+
+        function downloadResource(title) {
+            alert("Downloading '" + title + "'. (Simulated PDF download successfully initiated)");
+        }
+
+        renderResources('all');
+
+        // 3. Admin Panel Logic
+        function loginAdmin() {
+            const pin = document.getElementById('admin-pin-input').value;
+            if(pin === 'grid2026') {
+                document.getElementById('admin-login-box').classList.add('hidden');
+                document.getElementById('admin-dashboard-content').classList.remove('hidden');
+                loadAdminLeads();
+            } else {
+                alert("Incorrect PIN. Please use 'grid2026'.");
+            }
+        }
+
+        function logoutAdmin() {
+            document.getElementById('admin-dashboard-content').classList.add('hidden');
+            document.getElementById('admin-login-box').classList.remove('hidden');
+            document.getElementById('admin-pin-input').value = '';
+        }
+
+        function switchAdminTab(tabName) {
+            ['pdf', 'announcement', 'studyplan', 'leads'].forEach(t => {
+                document.getElementById(`admin-tab-${t}`).classList.add('hidden');
+                document.getElementById(`tab-btn-${t}`).className = "pb-3 border-b-2 border-transparent text-gridGray400 hover:text-white whitespace-nowrap font-medium";
+            });
+            document.getElementById(`admin-tab-${tabName}`).classList.remove('hidden');
+            document.getElementById(`tab-btn-${tabName}`).className = "pb-3 border-b-2 border-white text-white whitespace-nowrap font-bold";
+        }
+
+        function handleAdminUploadPDF(e) {
+            e.preventDefault();
+            const title = document.getElementById('up-title').value;
+            const standard = document.getElementById('up-std').value;
+            const subject = document.getElementById('up-subject').value;
+            const fileInput = document.getElementById('up-file');
+            const fileName = fileInput.files[0] ? fileInput.files[0].name : 'document.pdf';
+
+            const newRes = {
+                id: Date.now(),
+                title: title,
+                standard: standard,
+                subject: subject,
+                type: "Uploaded PDF Note",
+                size: "1.5 MB"
+            };
+
+            let resources = JSON.parse(localStorage.getItem('grid_resources') || '[]');
+            resources.unshift(newRes);
+            localStorage.setItem('grid_resources', JSON.stringify(resources));
+
+            alert("Successfully uploaded '" + title + "'! It is now live on the student resources section.");
+            e.target.reset();
+            renderResources('all');
+        }
+
+        function handleAdminAnnouncement(e) {
+            e.preventDefault();
+            const text = document.getElementById('admin-announcement-input').value;
+            localStorage.setItem('grid_announcement', text);
+            alert("Announcement published successfully to student panels!");
+        }
+
+        function handleAdminStudyPlan(e) {
+            e.preventDefault();
+            const text = document.getElementById('admin-studyplan-input').value;
+            localStorage.setItem('grid_studyplan', text);
+            alert("Weekly study plan updated successfully!");
+        }
+
+        function loadAdminLeads() {
+            const leads = JSON.parse(localStorage.getItem('grid_enrollments') || '[]');
+            document.getElementById('enrollment-count-badge').innerText = leads.length;
+            const container = document.getElementById('admin-leads-list');
+            container.innerHTML = '';
+
+            if(leads.length === 0) {
+                container.innerHTML = `<p class="text-sm text-gridGray400">No student enrollments submitted yet.</p>`;
+                return;
+            }
+
+            leads.forEach((lead, idx) => {
+                const div = document.createElement('div');
+                div.className = "bg-gridBlack p-4 rounded-xl border border-gridGray800 text-xs space-y-1";
+                div.innerHTML = `
+                    <div class="flex justify-between font-bold text-white text-sm">
+                        <span>#${idx+1} - ${lead.studentName} (Class ${lead.standard})</span>
+                        <span class="text-gridGray400">${new Date(lead.timestamp).toLocaleDateString()}</span>
+                    </div>
+                    <p>School: ${lead.school} | Board: ${lead.board} | Age: ${lead.age}</p>
+                    <p>Parent Phone: <a href="tel:${lead.parentPhone}" class="underline text-white font-bold">${lead.parentPhone}</a> | Address: ${lead.address}</p>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        // 4. Student Panel Logic
+        function loginStudent() {
+            const phone = document.getElementById('student-login-phone').value;
+            const pin = document.getElementById('student-login-pin').value;
+            if(!phone || !pin) {
+                alert("Please enter parent phone and student PIN.");
+                return;
+            }
+            document.getElementById('student-login-box').classList.add('hidden');
+            document.getElementById('student-dashboard-content').classList.remove('hidden');
+
+            // Load admin announcement and study plan dynamically
+            document.getElementById('student-announcement-text').innerText = localStorage.getItem('grid_announcement') || "No active announcements.";
+            document.getElementById('student-study-plan-display').innerText = localStorage.getItem('grid_studyplan') || "No study plan posted yet.";
+        }
+
+        function logoutStudent() {
+            document.getElementById('student-dashboard-content').classList.add('hidden');
+            document.getElementById('student-login-box').classList.remove('hidden');
+            document.getElementById('student-login-phone').value = '';
+            document.getElementById('student-login-pin').value = '';
+        }
+
+        // 5. Quiz Logic
+        const quizBank = {
+            6: [
+                { q: "What is the HCF of 24 and 36?", options: ["6", "12", "18", "8"], correct: 1, exp: "Prime factorization of 24 = 2³×3, 36 = 2²×3². HCF = 2²×3 = 12." },
+                { q: "Which of the following is a primary color of light?", options: ["Yellow", "Red", "Pink", "Orange"], correct: 1, exp: "Red, Green, and Blue are primary colors of light." }
+            ],
+            7: [
+                { q: "Solve: 3x + 5 = 20. What is x?", options: ["3", "5", "7", "4"], correct: 1, exp: "3x = 15 => x = 5." },
+                { q: "Which organelle is known as the powerhouse of the cell?", options: ["Nucleus", "Mitochondria", "Ribosome", "Vacuole"], correct: 1, exp: "Mitochondria generates chemical energy needed for cellular biochemical reactions." }
+            ],
+            8: [
+                { q: "What is the square root of 1024?", options: ["32", "34", "28", "36"], correct: 0, exp: "32 × 32 = 1024." },
+                { q: "Which gas is released during photosynthesis?", options: ["Carbon Dioxide", "Oxygen", "Nitrogen", "Hydrogen"], correct: 1, exp: "Plants absorb CO2 and release Oxygen during photosynthesis." }
+            ],
+            9: [
+                { q: "Factorise: x² - 9", options: ["(x-3)(x-3)", "(x+3)(x-3)", "(x+9)(x-1)", "(x+3)(x+3)"], correct: 1, exp: "A difference of squares: a² - b² = (a+b)(a-b)." },
+                { q: "Newton's first law of motion is also known as:", options: ["Law of Momentum", "Law of Inertia", "Law of Force", "Law of Action-Reaction"], correct: 1, exp: "Law of inertia states that an object at rest stays at rest unless acted upon." }
+            ],
+            10: [
+                { q: "If the roots of the quadratic equation ax² + bx + c = 0 are equal, then b² - 4ac is:", options: ["> 0", "< 0", "= 0", "= 1"], correct: 2, exp: "When discriminant b² - 4ac = 0, roots are real and equal." },
+                { q: "The SI unit of electric current is:", options: ["Volt", "Watt", "Ampere", "Ohm"], correct: 2, exp: "Ampere (A) is the base unit of electric current." }
+            ]
+        };
+
+        let currentStandard = 10;
+        let currentQuestionIdx = 0;
+        let score = 0;
+        let activeQuestions = [];
+
+        function startQuiz(std) {
+            currentStandard = std;
+            currentQuestionIdx = 0;
+            score = 0;
+            activeQuestions = quizBank[std] || quizBank[10];
+
+            document.getElementById('quiz-setup').classList.add('hidden');
+            document.getElementById('quiz-container').classList.remove('hidden');
+            document.getElementById('quiz-score-screen').classList.add('hidden');
+            document.getElementById('quiz-standard-badge').innerText = `Standard ${std}`;
+            loadQuizQuestion();
+        }
+
+        function loadQuizQuestion() {
+            const qObj = activeQuestions[currentQuestionIdx];
+            document.getElementById('quiz-progress').innerText = `Question ${currentQuestionIdx + 1} of ${activeQuestions.length}`;
+            document.getElementById('question-text').innerText = qObj.q;
+            
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+            
+            qObj.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 bg-gridBlack hover:bg-gridGray800 rounded-xl border border-gridGray800 text-white font-medium transition-all";
+                btn.innerText = opt;
+                btn.onclick = () => selectQuizOption(idx, qObj.correct, qObj.exp);
+                optionsContainer.appendChild(btn);
+            });
+
+            document.getElementById('quiz-feedback').classList.add('hidden');
+            document.getElementById('next-question-btn').classList.add('hidden');
+        }
+
+        function selectQuizOption(selectedIdx, correctIdx, explanation) {
+            const optionsContainer = document.getElementById('options-container');
+            const optionBtns = optionsContainer.getElementsByTagName('button');
+
+            for(let i=0; i<optionBtns.length; i++) {
+                optionBtns[i].disabled = true;
+                if(i === correctIdx) {
+                    optionBtns[i].classList.add('border-white', 'bg-white', 'text-black', 'font-bold');
+                } else if(i === selectedIdx && selectedIdx !== correctIdx) {
+                    optionBtns[i].classList.add('border-gray-500', 'opacity-50');
+                }
+            }
+
+            const feedback = document.getElementById('quiz-feedback');
+            feedback.classList.remove('hidden');
+            if(selectedIdx === correctIdx) {
+                score++;
+                feedback.className = "p-4 rounded-xl text-sm font-medium bg-gridGray800 text-white border border-white/30";
+                feedback.innerHTML = `<i class="fa-solid fa-check-circle mr-2"></i> Correct! ${explanation}`;
+            } else {
+                feedback.className = "p-4 rounded-xl text-sm font-medium bg-gridGray800 text-gray-300 border border-gridGray700";
+                feedback.innerHTML = `<i class="fa-solid fa-triangle-exclamation mr-2"></i> Incorrect. ${explanation}`;
+            }
+
+            document.getElementById('next-question-btn').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQuestionIdx++;
+            if(currentQuestionIdx < activeQuestions.length) {
+                loadQuizQuestion();
+            } else {
+                document.getElementById('quiz-container').classList.add('hidden');
+                document.getElementById('quiz-score-screen').classList.remove('hidden');
+                document.getElementById('final-score-text').innerText = `You scored ${score} out of ${activeQuestions.length} correct!`;
+            }
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz-score-screen').classList.add('hidden');
+            document.getElementById('quiz-setup').classList.remove('hidden');
+        }
+
+        // 6. Enrollment Form Logic
+        function handleEnrollmentSubmit(e) {
+            e.preventDefault();
+            if(document.getElementById('hp-field').value !== '') return;
+
+            const name = document.getElementById('student-name').value;
+            const age = document.getElementById('student-age').value;
+            const standard = document.getElementById('student-standard').value;
+            const school = document.getElementById('student-school').value;
+            const board = document.getElementById('student-board').value;
+            const phone = document.getElementById('parent-phone').value;
+            const address = document.getElementById('student-address').value;
+
+            if(phone.length !== 10 || isNaN(phone)) {
+                alert("Please enter a valid 10-digit phone number.");
+                return;
+            }
+
+            const submissionRecord = {
+                timestamp: new Date().toISOString(),
+                studentName: name,
+                age: age,
+                standard: standard,
+                school: school,
+                board: board,
+                parentPhone: phone,
+                address: address
+            };
+
+            let existingLeads = JSON.parse(localStorage.getItem('grid_enrollments') || '[]');
+            existingLeads.unshift(submissionRecord);
+            localStorage.setItem('grid_enrollments', JSON.stringify(existingLeads));
+
+            document.getElementById('res-name').innerText = name;
+            document.getElementById('res-std').innerText = standard;
+            document.getElementById('res-phone').innerText = phone;
+
+            const adminWhatsApp = "919150077037";
+            const waMsg = `Hello The Grid Edutech Admin,%0A%0ANew Student Enrollment:%0A- Name: ${encodeURIComponent(name)}%0A- Standard: Class ${encodeURIComponent(standard)}%0A- Board: ${encodeURIComponent(board)}%0A- Parent Phone: ${encodeURIComponent(phone)}`;
+            document.getElementById('whatsapp-redirect-btn').href = `https://wa.me/${adminWhatsApp}?text=${waMsg}`;
+
+            document.getElementById('enrollment-form').classList.add('hidden');
+            document.getElementById('enrollment-success').classList.remove('hidden');
+        }
+
+        function resetEnrollmentForm() {
+            document.getElementById('enrollment-form').reset();
+            document.getElementById('enrollment-success').classList.add('hidden');
+            document.getElementById('enrollment-form').classList.remove('hidden');
+        }
+
+        // 7. FAQ Accordion Toggle
+        function toggleFaq(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('i');
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+    </script>
+</body>
+</html>
